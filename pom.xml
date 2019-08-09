@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.1.6.RELEASE</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+
+	<packaging>pom</packaging>
+	<groupId>com.murdock.books</groupId>
+	<artifactId>spring-shell-guide</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<name>spring-shell-guide</name>
+	<description>Mongo工具</description>
+
+	<modules>
+		<module>spring-shell-guide-start</module>
+		<module>spring-shell-guide-command</module>
+		<module>spring-shell-guide-service</module>
+	</modules>
+
+	<properties>
+		<java.version>1.8</java.version>
+		<spring-shell.version>2.0.1.RELEASE</spring-shell.version>
+		<spring-boot.version>2.1.6.RELEASE</spring-boot.version>
+		<vipserver-client.version>4.8.2</vipserver-client.version>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-dependencies</artifactId>
+				<version>${spring-boot.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<!--self projects-->
+			<dependency>
+				<groupId>com.murdock.books</groupId>
+				<artifactId>spring-shell-guide-service</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.murdock.books</groupId>
+				<artifactId>spring-shell-guide-command</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.murdock.books</groupId>
+				<artifactId>spring-shell-guide-start</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<!--self projects-->
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter</artifactId>
+				<version>${spring-boot.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.shell</groupId>
+				<artifactId>spring-shell-starter</artifactId>
+				<version>${spring-shell.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.shell</groupId>
+				<artifactId>spring-shell-table</artifactId>
+				<version>${spring-shell.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-test</artifactId>
+				<version>${spring-boot.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-test</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+</project>
